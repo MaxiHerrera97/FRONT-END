@@ -11,7 +11,8 @@ let nombre = "Anthony Maximiliano";
 
 let spn = document.querySelector("#createdBy");
 
-spn.innerHTML += " " + nombre; // <span> nombre </span> 
+spn.innerHTML += " " + nombre;
+
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
 // con el nombre 'description' que será justamente la descripción del ToDo.
@@ -55,23 +56,19 @@ this.complete = true;
 function buildToDo(todo, index) {
   // Tu código acá:
   let toDoShell = document.createElement("div");
-  toDoShell.setAttribute("class", "toDoShell"); //<div class = "toDoShell">
+  toDoShell.setAttribute("class", "toDoShell");
   let toDoText = document.createElement("span");
 
-  toDoText.innerHTML = todo.description;// <span> descripcion </span>
-
-  toDoText.setAttribute("id", index); // <span id=index> descripcion </span>
-  toDoText.addEventListener("click", completeToDo);
+  toDoText.innerHTML = todo.description
+  toDoText.setAttribute("id", "index");
 
   if(todo.complete){
-    toDoText.setAttribute("class", "completeText");
-  };
-  toDoShell.appendChild (toDoText);
+  toDoText.setAttribute("class", "completeText");
+  }
+toDoShell.appendChild (toDoText);
 
-  return toDoShell;
-  //<div class = "toDoShell">
-  // <span id=index> descripcion </span>
-  // </div>
+return toDoShell;
+
 }
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
@@ -81,7 +78,7 @@ function buildToDo(todo, index) {
 
 function buildToDos(toDos) {
   // Tu código acá:
-  let arr = toDos.map((todo, index) => buildToDo(todo, index));
+  let arr = toDos.map((todo, index )=> buildToDo(todo, index));
   return arr;
 }
 
@@ -99,7 +96,7 @@ function displayToDos() {
   let toDoContainer = document.getElementById("toDoContainer");
   toDoContainer.innerHTML = "";
 
-  let result = buildToDos(toDoItems);
+  let result = buildToDos(toDoItems); 
 
   result.map((elemento) => toDoContainer.appendChild(elemento));
 }
@@ -125,7 +122,6 @@ function addToDo() {
   let inpt = document.getElementById("toDoInput");
   inpt.value = "";
 
-  //  <input  value = "" />
   displayToDos();
 }
 
@@ -136,6 +132,7 @@ function addToDo() {
 
 // Tu código acá:
 document.getElementById("addButton").addEventListener("click", addToDo);
+
 
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
@@ -156,7 +153,7 @@ function completeToDo(event) {
   const index = event.target.id;
   // Tu código acá:
   toDoItems[index].completeToDo();
-
+  
   displayToDos();
 }
 
