@@ -16,7 +16,7 @@ var traverseDomAndCollectElements = function (matchFunctionMaker, startEl = docu
     let aux = traverseDomAndCollectElements(matchFunctionMaker, startEl.children[i]);
     resultSet = [...resultSet, ...aux];
   }
-return resultSet;
+return resultS
 };
 
 // Detecta y devuelve el tipo de selector
