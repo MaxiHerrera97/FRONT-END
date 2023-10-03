@@ -10,9 +10,11 @@ align-items: center;
 `;
 
 const Buttons = styled.div
-`border-radius: 5px;
+`border-radius: 10px;
 margin: 10px;
-padding: 5px;
+padding: 10px;
+background-color: black;
+color: white
 `;
 
 export default class Botones extends React.Component {
